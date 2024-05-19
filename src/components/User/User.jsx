@@ -20,16 +20,13 @@ const User = ({ person }) => {
       <div>
         <img
           src={
-            publicFolder + person.profilePicture
-              ? publicFolder + person.profilePicture
-              : publicFolder + "defaultProfile.png"
+            "defaultProfile.png"
           }
           alt="profile"
           className="followerImage"
         />
         <div className="name">
-          <span>{person.firstname}</span>
-          <span>@{person.username}</span>
+          <span>{person.fullName}</span>
         </div>
       </div>
       <button
