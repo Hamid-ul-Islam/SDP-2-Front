@@ -1,6 +1,6 @@
 import axios from "axios";
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getTimelinePosts } from "../../actions/PostsAction";
 
 export default function CommentCard({
@@ -75,7 +75,7 @@ export default function CommentCard({
           {filteredReplies.map((reply) => (
             <div>
               <div className="h-5 bg-indigo-500 rounded-full w-[1.6px] ml-2"></div>
-              <h1 className="text-xs">{username}</h1>
+              <h1 className="text-xs">{reply.user.fullName}</h1>
               <p className="text-md font-medium  rounded-lg  text-slate-800">
                 {reply.reply}
               </p>

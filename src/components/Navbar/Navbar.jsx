@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../actions/AuthActions";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const dispatch = useDispatch();
@@ -32,7 +33,9 @@ export default function Navbar() {
                 <a href="#">About</a>
               </li>
               <li className="md:px-4 md:py-2 hover:text-indigo-400">
-                <a href="#">Contact</a>
+                <Link to="/chat" href="#">
+                  Chat
+                </Link>
               </li>
             </ul>
           </div>

@@ -2,14 +2,17 @@ import React from "react";
 import "./ProfileCard.css";
 import Cover from "../../img/cover.jpg";
 import Profile from "../../img/profileImg.jpg";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../actions/AuthActions";
+import PostSide from "../PostSide/PostSide";
 const ProfileCard = ({ location }) => {
   const { user } = useSelector((state) => state.authReducer.authData);
   const posts = useSelector((state) => state.postReducer.posts);
   const serverPublic = process.env.REACT_APP_PUBLIC_FOLDER;
   const dispatch = useDispatch();
+  // search param
+  const params = useParams();
 
   const handleLogOut = () => {
     dispatch(logout());
